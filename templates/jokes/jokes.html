@@ -1,0 +1,8 @@
+
+{% for joke in jokes %}
+
+<h2>{{joke.slug}}</h2>
+<h3><a href="{{joke.get_absolute_url}}">{{joke.content}}</a></h3>
+
+
+{%endfor%}
