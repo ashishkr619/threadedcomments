@@ -15,7 +15,7 @@ class CommentManager(models.Manager):
         # content_type = ContentType.objects.get_for_model(Joke)
         content_type = ContentType.objects.get_for_model(instance.__class__)#another way of saying the above thing
         obj_id = instance.id
-        qs = super().filter(content_type=content_type,object_id = obj_id)#pass additional context
+        qs = super().filter(content_type=content_type,object_id = obj_id).filter(parent=None)#pass additional context
         return qs
 
 
